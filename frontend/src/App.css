@@ -1,121 +1,138 @@
-/* App.css */
-* {
+/* Global Resets and Box Sizing */
+*,
+*:before,
+*:after {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
 html {
+    scroll-behavior: smooth;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-  }
-*, *:before, *:after {
-    -webkit-box-sizing: inherit;
-    -moz-box-sizing: inherit;
-    box-sizing: inherit;
 }
-a {
-    text-decoration: none;
-    position: relative;
-    color: #1F373D;
-}
+
 body {
+    font-family: 'Work Sans', sans-serif;
+    color: #1F373D;
+    background-color: #f4f4f4; /* Background color */
+    font-size: 13pt;
+    font-weight: 400;
+    overflow-x: hidden;
+    transition: opacity 1s;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
-a:focus,
-a:hover {
-    text-decoration: none;
-    color: #FFCC01;
-}
-img {
-    max-width: 100%;
-    height: auto;
-}
-::selection {
-    background: #1F373D;
-    color: #fff;
-    text-shadow: none;
-}
-::-moz-selection {
-    background: #1F373D;
-    color: #fff;
-    text-shadow: none;
-}
-::-webkit-selection {
-    background: #1F373D;
-    color: #fff;
-    text-shadow: none;
+
+/* Typography */
+h1 {
+    font-size: 58px;
+    font-weight: 700;
 }
 
-/*-----------------------------------------------------------
-    2. Typography 
-------------------------------------------------------------*/
-body {
-    color: #1F373D;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13pt;
-    font-weight: 400;
-    overflow-x: hidden;
-    transition: opacity 1s;
-}
-h1,
-.h1 {
-    font-size: 58px;
-    font-weight: 700;  
-  }
-h2,
-.h2 {
+h2 {
     font-size: 40px;
-    font-weight: 700;  
+    font-weight: 700;
 }
-h3,
-.h3 {
+
+h3 {
     font-size: 40px;
-    font-weight: 700;  
+    font-weight: 700;
 }
-h4,
-.h4 {
+
+h4 {
     font-size: 25px;
-    font-weight: 700;  
+    font-weight: 700;
 }
-h5,
-.h5 {
+
+h5 {
     font-size: 14px;
     font-weight: 400;
     color: #919EB1;
 }
-h6,
-.h6 {
+
+h6 {
     font-size: 14px;
 }
+
 p {
     font-size: 16px;
     line-height: 1.8;
     margin-bottom: 15px;
     letter-spacing: 0.025em;
 }
+
 li {
     font-size: 13px;
     font-weight: 400;
     letter-spacing: 0.025em;
     display: inline;
 }
-/* App.css */
-body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
+
+/* Links */
+a {
+    text-decoration: none;
+    position: relative;
     color: #1F373D;
-    background-color: #f4f4f4; /* اختر خلفية مريحة */
-    box-sizing: border-box;
-  }
-  
-  .navbar {
+}
+
+a:focus,
+a:hover {
+    color: #FFCC01;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Selection */
+::selection,
+::-moz-selection,
+::-webkit-selection {
+    background: #1F373D;
+    color: #fff;
+    text-shadow: none;
+}
+
+/* Container */
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* Navbar */
+.navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding: 20px 120px;
     background-color: #fff;
     color: #1F373D;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -125,47 +142,43 @@ body {
     left: 0;
     z-index: 1000;
     border-bottom: 1px solid #e1e1e1;
-  }
-  
-  .navbar-logo {
-    flex: 1;
-  }
-  
-  .navbar-logo a {
+}
+
+.navbar-logo a {
     color: #1F373D;
     text-decoration: none;
     font-size: 24px;
     font-weight: 700;
     text-transform: uppercase;
-  }
-  
-  .navbar-links {
+}
+
+.navbar-links {
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
     flex: 2;
     justify-content: center;
-  }
-  
-  .navbar-links li {
+}
+
+.navbar-links li {
     margin: 0 20px;
-  }
-  
-  .navbar-links a {
+}
+
+.navbar-links a {
     color: #1F373D;
     text-decoration: none;
     font-size: 16px;
     font-weight: 400;
     transition: color 0.3s;
-  }
-  
-  .navbar-links a:hover {
-    color: #FFCC01;
-  }
-  
-  .login-button {
-    background-color: #FFCC01;
+}
+
+.navbar-links a:hover {
+    color: #01c0ff;
+}
+
+.login-button {
+    background-color: #01a6ff;
     color: #1F373D;
     text-decoration: none;
     padding: 10px 20px;
@@ -174,21 +187,9 @@ body {
     transition: background-color 0.3s;
     font-size: 16px;
     margin-left: 20px;
-  }
-  
-  .login-button:hover {
-    background-color: #e1b100;
-  }
-  
-  /* Centering Navbar on the page */
-  .container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .content {
-    max-width: 1200px;
-    width: 100%;
-  }
-  
+}
+
+.login-button:hover {
+    background-color: #01c0ff;
+}
+
