@@ -4,7 +4,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
 
-function Navbar() {
+function Navbar({ user, onLogout }) {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
@@ -16,23 +16,29 @@ function Navbar() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/destinations">Destinations</Link>
+          <Link to="#">Destinations</Link>
         </li>
         <li>
-          <Link to="/blog">Blog</Link>
+          <Link to="#">Blog</Link>
         </li>
         <li>
-          <Link to="/news">News</Link>
+          <Link to="#">News</Link>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <Link to="#">Contact</Link>
         </li>
       </ul>
 
-      <div>
-        <Link to="/login" className="login-button">
-          Sign Up
-        </Link>
+      <div className="user-info">
+        {user ? (
+          <>
+            <span className="welcome-message">Hi, {user.username}</span>
+            <Link to="/profile" className="profile-link">My Profile</Link>
+            <button onClick={onLogout} className="logout-button">Logout</button>
+          </>
+        ) : (
+          <Link to="/login" className="login-button">Sign Up</Link>
+        )}
       </div>
     </nav>
   );

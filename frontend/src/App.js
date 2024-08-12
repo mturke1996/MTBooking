@@ -7,18 +7,30 @@ import Navbar from "./components/Navbar";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Home from "./components/Home";
+import Profile from "./components/Profile";
 
 function App() {
   const [token, setToken] = useState(null);
+  const [user, setUser] = useState(null); // حالة لتتبع معلومات المستخدم
+
+  const handleLogout = () => {
+    setToken(null);
+    setUser(null);
+  };
 
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        <Navbar user={user} onLogout={handleLogout} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login setToken={setToken} />} />
+          <Route
+            path="/login"
+            element={<Login setToken={setToken} setUser={setUser} />}
+          />
           <Route path="/register" element={<Register />} />
+          <Route path="/profile" element={<Profile />} />
+
           {/* Add more routes here */}
         </Routes>
       </div>

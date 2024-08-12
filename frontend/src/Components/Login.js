@@ -5,7 +5,7 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import "../App.css";
 
-export default function Login({ setToken }) {
+export default function Login({ setToken, setUser }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -17,6 +17,7 @@ export default function Login({ setToken }) {
         password,
       });
       setToken(response.data.token);
+      setUser({ username }); // تعيين معلومات المستخدم
       navigate("/");
     } catch (error) {
       console.error("Login error:", error);
