@@ -3,6 +3,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
+import Calendarselect from "./Calendarselect";
 
 function Navbar({ user, onLogout }) {
   return (
@@ -16,13 +17,13 @@ function Navbar({ user, onLogout }) {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="#">Destinations</Link>
+          <Link to="/weather">Weather</Link>
         </li>
         <li>
-          <Link to="#">Blog</Link>
+          <Link to="/calendar">Calendar</Link>
         </li>
         <li>
-          <Link to="#">News</Link>
+          <Link to="/choose">why us</Link>
         </li>
         <li>
           <Link to="#">Contact</Link>
@@ -40,6 +41,7 @@ function Navbar({ user, onLogout }) {
           <Link to="/login" className="login-button">Sign Up</Link>
         )}
       </div>
+      
     </nav>
   );
 }
