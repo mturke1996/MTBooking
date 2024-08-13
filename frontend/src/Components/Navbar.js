@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
-import Calendarselect from "./Calendarselect";
 
 function Navbar({ user, onLogout }) {
   return (
@@ -15,13 +14,13 @@ function Navbar({ user, onLogout }) {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/weather">Weather</Link>
+          <Link to="#">Destinations</Link>
         </li>
         <li>
-          <Link to="/calendar">Calendar</Link>
+          <Link to="#">Blog</Link>
         </li>
         <li>
-          <Link to="/choose">why us</Link>
+          <Link to="#">News</Link>
         </li>
         <li>
           <Link to="#">Contact</Link>
@@ -51,7 +50,6 @@ function Navbar({ user, onLogout }) {
           </Link>
         )}
       </div>
-      
     </nav>
   );
 }

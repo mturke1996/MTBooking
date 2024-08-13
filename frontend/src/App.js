@@ -3,14 +3,11 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Navbar from "./Components/Navbar";
-import Login from "./Components/Login";
-import Register from "./Components/Register";
-import Home from "./Components/Home";
-import Profile from "./Components/Profile";
-import Calendarselect from "./Components/Calendarselect";
-import Weather from "./Components/Weather";
-import Choose from "./Components/Choose";
+import Navbar from "./components/Navbar";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Home from "./components/Home";
+import Profile from "./components/Profile";
 
 function App() {
   const [token, setToken] = useState(null);
@@ -33,9 +30,6 @@ function App() {
           />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/calendar" element={<Calendarselect />} />
-          <Route path="/weather" element={<Weather />} />
-          <Route path="/choose" element={<Choose />} />
 
           {/* Add more routes here */}
         </Routes>
