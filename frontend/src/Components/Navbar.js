@@ -4,7 +4,7 @@ import "../App.css";
 
 function Navbar({ user, onLogout }) {
   return (
-    <nav className="navbar ">
+    <nav className="navbar">
       <div className="navbar-logo">
         <Link to="/">MT Booking</Link>
       </div>
@@ -31,18 +31,32 @@ function Navbar({ user, onLogout }) {
         {user ? (
           <>
             <span className="welcome-message">
-            <i class="fa-solid fa-user fa-beat-fade"></i>
-              Hi, {user.username}
+              <i className="fa-solid fa-user fa-beat-fade"></i> Hi, {user.username}
             </span>
-            <Link to="/profile" className="profile-link">
-              My Profile
-            </Link>
-            <Link to="/myBokking" className="profile-link">
-              My Booking
-            </Link>
-            <button onClick={onLogout} className="logout-button">
-              Logout
-            </button>
+            <div className="user-menu">
+              <span className="icon">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <ul className="dropdown-menu">
+                <li>
+                  <Link to="/profile" className="profile-link">
+                    My Profile
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/myBooking" className="profile-link">
+                    My Booking
+                  </Link>
+                </li>
+                <li>
+                  <li onClick={onLogout} className="logout-button">
+                    Logout
+                  </li>
+                </li>
+              </ul>
+            </div>
           </>
         ) : (
           <Link to="/login" className="login-button">
