@@ -1,7 +1,12 @@
 // src/components/Home.js
 
 import React from "react";
+import Hero from "./Hero";
 
 export default function Home() {
-  return <div style={{paddingTop: "100px", textAlign: "center"}}>Welcome to MT Booking</div>;
+  return (
+    <div style={{ paddingTop: "", textAlign: "center" }}>
+      <Hero />
+    </div>
+  );
 }
