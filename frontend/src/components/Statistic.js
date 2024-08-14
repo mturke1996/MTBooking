@@ -31,16 +31,16 @@ export default function Statistic() {
             <p>Clients</p>
           </div>
           <div className="statistic-box text-center">
-            <p>385</p>
-            <p>Clients</p>
+            <p>500</p>
+            <p>Apartments</p>
           </div>
           <div className="statistic-box text-center">
-            <p>385</p>
-            <p>Clients</p>
+            <p>17</p>
+            <p>Awards</p>
           </div>
           <div className="statistic-box text-center">
-            <p>385</p>
-            <p>Clients</p>
+            <p>50</p>
+            <p>Employees</p>
           </div>
         </div>
       </div>
