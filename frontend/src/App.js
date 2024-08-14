@@ -8,6 +8,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
+import ApartmentForm from "./components/ApartmentForm";
 function App() {
   const [token, setToken] = useState(null);
   const [user, setUser] = useState(null); 
@@ -29,6 +30,7 @@ function App() {
           />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/addApartment" element={<ApartmentForm />} />
 
           {/* Add more routes here */}
         </Routes>

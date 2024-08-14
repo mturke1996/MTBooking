@@ -52,6 +52,11 @@ function Navbar({ user, onLogout }) {
                   </Link>
                 </li>
                 <li>
+                  <Link to="/addApartment" className="profile-link">
+                    Add New Appartment
+                  </Link>
+                </li>
+                <li>
                   <li onClick={onLogout} className="logout-button">
                     Logout
                   </li>

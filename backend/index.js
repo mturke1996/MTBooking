@@ -70,6 +70,37 @@ app.post('/login', (req, res) => {
     });
 });
 
+// API endpoint to add a new apartment
+app.post('/api/apartments', (req, res) => {
+    const {
+      Adresse,
+      Zimmeranzahl,
+      'Fläche (m²)': Flaeche,
+      'Monatliche Miete': Miete,
+      Status,
+      img1,
+      img2,
+      img3,
+      img4,
+      Beschreibung,
+      Wohnungstyp,
+    } = req.body;
+  
+    const query = `
+      INSERT INTO Wohnungen (Adresse, Zimmeranzahl, "Fläche (m²)", "Monatliche Miete", Status, img1, img2, img3, img4, Beschreibung, Wohnungstyp)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `;
+  
+    db.run(query, [Adresse, Zimmeranzahl, Flaeche, Miete, Status, img1, img2, img3, img4, Beschreibung, Wohnungstyp], function(err) {
+      if (err) {
+        console.error('Error inserting data:', err);
+        res.status(500).json({ error: 'Database error' });
+      } else {
+        res.status(200).json({ message: 'Apartment added successfully', id: this.lastID });
+      }
+    });
+  });
+
 // بدء تشغيل الخادم
 app.listen(Port, () => {
     console.log(`Server running at http://localhost:${Port}/`);
