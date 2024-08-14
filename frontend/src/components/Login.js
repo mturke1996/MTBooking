@@ -17,7 +17,7 @@ export default function Login({ setToken, setUser }) {
         password,
       });
       setToken(response.data.token);
-      setUser({ username }); // تعيين معلومات المستخدم
+      setUser({ username }); 
       navigate("/");
     } catch (error) {
       console.error("Login error:", error);

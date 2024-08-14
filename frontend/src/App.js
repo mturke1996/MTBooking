@@ -8,10 +8,9 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
-
 function App() {
   const [token, setToken] = useState(null);
-  const [user, setUser] = useState(null); // حالة لتتبع معلومات المستخدم
+  const [user, setUser] = useState(null); 
 
   const handleLogout = () => {
     setToken(null);
