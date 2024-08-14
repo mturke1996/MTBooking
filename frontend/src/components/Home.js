@@ -1,12 +1,12 @@
-// src/components/Home.js
-
 import React from "react";
 import Hero from "./Hero";
+import Statistic from "./Statistic";
 
 export default function Home() {
   return (
-    <div style={{ paddingTop: "", textAlign: "center" }}>
+    <div>
       <Hero />
+      <Statistic />
     </div>
   );
 }
